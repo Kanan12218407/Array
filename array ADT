@@ -1,0 +1,51 @@
+#include<iostream>
+#include<stdio.h>
+#include<stdlib.h>
+using namespace std;
+struct Array{
+    int *A;
+    int size;
+    int length;
+};
+void displayarray(struct Array arr){
+    int i;
+    cout<<"the elements are: "<<endl;
+    for(i=0;i<arr.length;i++){
+        cout<<arr.A[i]<<" ";
+    }
+}
+int main(){
+    struct Array arr;
+    int n;
+    cout<<"enter size of an array: "<<endl;
+    cin>>n;
+    arr.size=n;
+    arr.A=new int[n];
+    arr.length=0;
+    
+    cout<<"enter number of numbers: "<<endl;
+    cin>>n;
+    
+    cout<<"enter all elements: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr.A[i];
+       
+    }
+     arr.length=n;
+     displayarray(arr);
+     
+    delete[] arr.A;
+
+    return 0;
+}
+output:
+enter size of an array: 
+5
+enter number of numbers: 
+3
+enter all elements: 
+1
+2
+3
+the elements are: 
+1 2 3 
