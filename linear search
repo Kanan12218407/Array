@@ -14,32 +14,6 @@ void displayarray(struct Array arr){
         cout<<arr.A[i]<<" ";
     }
 }
-void append(struct Array *arr,int x){
-    if(arr->length<arr->size)
-    arr->A[arr->length++]=x;
-}
-void insert(struct Array *arr,int index,int x){
-    int i;
-    if(index>=0 && index<=arr->length){
-        for(i=arr->length;i>index;i--)
-            arr->A[i]=arr->A[i-1];
-            arr->A[index]=x;
-            arr->length++;
-    }
-}
-int deleteelement(struct Array *arr,int index){
-    int x=0;
-    int i;
-    if(index>=0 && index<arr->length){
-        x=arr->A[index];
-       for(i=index;i<arr->length-1;i++)
-            arr->A[i]=arr->A[i+1];
-        arr->length--;
-    }
-    cout<<"deleted element is: ";
-    return x;
-}
-
 int linearsearch(struct Array arr,int key){
     int i;
     for(i=0;i<arr.length;i++){
@@ -50,10 +24,6 @@ int linearsearch(struct Array arr,int key){
 }
 int main(){
     struct Array arr={{2,3,4,5,6},10,5};
-    //append(&arr,10);
-    //insert(&arr,3,10);
-    // int deletedelement=deleteelement(&arr,0);
-    // cout<<deletedelement<<endl;
     cout<<"element is found at index: "<<linearsearch(arr,4)<<endl;
     displayarray(arr);
     
@@ -82,31 +52,6 @@ void displayarray(struct Array arr){
         cout<<arr.A[i]<<" ";
     }
 }
-void append(struct Array *arr,int x){
-    if(arr->length<arr->size)
-    arr->A[arr->length++]=x;
-}
-void insert(struct Array *arr,int index,int x){
-    int i;
-    if(index>=0 && index<=arr->length){
-        for(i=arr->length;i>index;i--)
-            arr->A[i]=arr->A[i-1];
-            arr->A[index]=x;
-            arr->length++;
-    }
-}
-int deleteelement(struct Array *arr,int index){
-    int x=0;
-    int i;
-    if(index>=0 && index<arr->length){
-        x=arr->A[index];
-       for(i=index;i<arr->length-1;i++)
-            arr->A[i]=arr->A[i+1];
-        arr->length--;
-    }
-    cout<<"deleted element is: ";
-    return x;
-}
 void swap(int *x,int *y){
     int temp;
     temp=*x;
@@ -126,10 +71,7 @@ int linearsearch(struct Array *arr,int key){
 }
 int main(){
     struct Array arr={{2,3,4,5,6},10,5};
-    // append(&arr,10);
-    // insert(&arr,3,10);
-    // int deletedelement=deleteelement(&arr,0);
-    // cout<<deletedelement<<endl;
+   
     cout<<"element is found at index: "<<linearsearch(&arr,4)<<endl;
     displayarray(arr);
     
@@ -157,31 +99,6 @@ void displayarray(struct Array arr){
         cout<<arr.A[i]<<" ";
     }
 }
-void append(struct Array *arr,int x){
-    if(arr->length<arr->size)
-    arr->A[arr->length++]=x;
-}
-void insert(struct Array *arr,int index,int x){
-    int i;
-    if(index>=0 && index<=arr->length){
-        for(i=arr->length;i>index;i--)
-            arr->A[i]=arr->A[i-1];
-            arr->A[index]=x;
-            arr->length++;
-    }
-}
-int deleteelement(struct Array *arr,int index){
-    int x=0;
-    int i;
-    if(index>=0 && index<arr->length){
-        x=arr->A[index];
-       for(i=index;i<arr->length-1;i++)
-            arr->A[i]=arr->A[i+1];
-        arr->length--;
-    }
-    cout<<"deleted element is: ";
-    return x;
-}
 void swap(int *x,int *y){
     int temp;
     temp=*x;
@@ -201,10 +118,7 @@ int linearsearch(struct Array *arr,int key){
 }
 int main(){
     struct Array arr={{2,3,4,5,6},10,5};
-    // append(&arr,10);
-    // insert(&arr,3,10);
-    // int deletedelement=deleteelement(&arr,0);
-    // cout<<deletedelement<<endl;
+    
     cout<<"element is found at index: "<<linearsearch(&arr,4)<<endl;
     displayarray(arr);
     
