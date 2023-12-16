@@ -1,0 +1,59 @@
+#include<iostream>
+#include<climits>
+using namespace std;
+
+void display(int arr[],int n){
+cout<<"the array is: ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+} 
+void deleteatbeginning(int arr[],int &n){
+    if(n<=0){
+        cout<<"the array is empty cannot delete any element"<<endl;
+        return ;
+    }
+    for(int i=0;i<n-1;i++){
+        arr[i]=arr[i+1];
+    }
+    n--;
+}
+void deleteatend(int arr[],int &n){
+    if(n<=0){
+        cout<<"the array is empty.last element cannot be deleted"<<endl;
+        return;
+    }
+    n--;
+}
+void deleteatanyposition(int arr[],int &n,int position){
+    if(n<=0){
+        cout<<"the array is empty and any element cannot be deleted"<<endl;
+        return ;
+    }
+    if(position<0 || position>n){
+        cout<<"invalid position. cannot delete any element"<<endl;
+        return ;
+    }
+    for(int i=position;i<n-1;i++){
+        arr[i]=arr[i+1];
+    }
+    n--;
+}
+int main(){
+    int n;
+    cout<<"enter the size of the array: "<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"enter elements of your array: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    deleteatbeginning(arr,n);
+    deleteatend(arr,n);
+    int pos;
+    cout<<"enter the position you want to delete the element from: ";
+    cin>>pos;
+    deleteatanyposition(arr,n,pos);
+    display(arr,n);
+    return 0;
+    }
