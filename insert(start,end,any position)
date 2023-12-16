@@ -1,0 +1,66 @@
+#include<iostream>
+#include<climits>
+using namespace std;
+// int insertionsort(int arr[],int n){
+//     for(int i=1;i<n;i++){
+//         int current=arr[i];
+//         int j=i-1;
+//         while(arr[j]>current && j>=0){
+//             arr[j+1]=arr[j];
+//             j--;
+//         }
+//         arr[j+1]=current;
+//     }
+// }
+void display(int arr[],int n){
+cout<<"the sorted array is: ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+} 
+void insertatbeginning(int arr[],int &n,int value){
+    for(int i=n;i>0;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[0]=value;
+    n++;
+}
+void insertatend(int arr[],int &n,int value){
+    arr[n]=value;
+    n++;
+}
+void insertatanyposition(int arr[],int &n,int value,int position){
+    if(position<0 || position>n){
+        cout<<"invalid position"<<endl;
+        return;
+    }
+    for(int i=n;i>position;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[position]=value;
+    n++;
+}
+int main(){
+    int n;
+    cout<<"enter the size of the array: "<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"enter elements of your array: "<<endl;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int newval;
+    cout<<"enter the new value to be inserted: ";
+    cin>>newval;
+    
+    int pos;
+    cout<<"enter the position you want to enter the element in: ";
+    cin>>pos;
+    //insertionsort(arr,n);
+    insertatbeginning(arr,n,newval);
+    insertatend(arr,n,newval);
+    insertatanyposition(arr,n,newval,pos);
+    display(arr,n);
+    return 0;
+    }
+
